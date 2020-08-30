@@ -1,10 +1,10 @@
-# experiment-mbe-simpleclass
+# Experiment MBE SimpleClass
 This is an experimental repo to learn model based engineering by doing. 
 
 The immediate (and probably intermediate) aim is to produce a python equivalent of the SimpleClass.java
 
 
-## structure
+## Structure
 
 I follow https://docs.pytest.org/en/stable/goodpractices.html#tests-as-part-of-application-code
 in terms of setting up the folder structure.

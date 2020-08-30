@@ -1,5 +1,5 @@
 # Experiment MBE SimpleClass
-This is an experimental repo to learn model based engineering by doing. 
+This is an experimental repo to learn model based engineering by doing.
 
 The immediate (and probably intermediate) aim is to produce a python equivalent of the SimpleClass.java
 
@@ -20,3 +20,7 @@ Python 3.7.7
 1. Create your own virtualenv running python 3.7.7 for this project and activate it
 2. GO to root folder and then install the dependencies with `pip install -r requirements.txt`
 3. Type `pytest`
+
+It should look like this:
+
+![it works](assets/works.png)

@@ -24,3 +24,8 @@ Python 3.7.7
 It should look like this:
 
 ![it works](assets/works.png)
+
+## Assumptions
+
+1. Use `mypy` because python is not statically typed
+2. As far as possible try to indicate the types

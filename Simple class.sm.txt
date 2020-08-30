@@ -1,0 +1,238 @@
+<semanticmodel>
+   Simple class
+
+   <javasourcecodedirectory>
+      /Users/stevet/Documents/workspace/
+
+   <isverboseon>
+      true
+
+   <isassertionson>
+      false
+
+   <issafemodeon>
+      false
+
+   <includepackagename>
+      true
+
+   <datatype>
+      unconstrained
+      <range>
+         <span>
+      </range>
+      <rttype>
+         String
+   </datatype>
+
+   <datatype>
+      x type
+      <range>
+         <span>
+      </range>
+      <rttype>
+         int
+      <assert>
+         $ > 0
+   </datatype>
+
+   <datatype>
+      Simple class reference
+      <objreference>
+      <rttype>
+         SimpleClass
+   </datatype>
+
+   <datatype>
+      Simple class set
+      <objreference>
+      <rttype>
+         ArrayList<SimpleClass>
+   </datatype>
+
+   <condition>
+      x has been set to zero
+   </condition>
+
+   <condition>
+      x has been set to new x
+   </condition>
+
+
+   <class>
+      Simple class
+      <coordinates>
+         119
+         166
+
+      <size>
+         100
+         75
+
+      <pimimport>
+         java.util.something;
+      </pimimport>
+
+      <attribute>
+         x
+            <range>
+               x type
+      </attribute>
+
+      <attribute>
+         state
+      </attribute>
+
+      <transitionaction>
+         initializer
+         <guarantees>
+            x has been set to zero
+         </guarantees>
+
+         <pimaction>
+            .@i x @ = 0;
+         </pimaction>
+
+      </action>
+
+      <transitionaction>
+         update x
+         <parameter>
+            new x
+            x type
+
+         <guarantees>
+            x has been set to new x
+         </guarantees>
+
+         <pimaction>
+            .@i x @ = @i new x @;
+         </pimaction>
+
+      </action>
+
+      <state>
+         Exists
+         <coordinates>
+            135
+            200
+
+         <size>
+            100
+            50
+
+      </state>
+
+      <state>
+         Doesn't exist
+         <coordinates>
+            175
+            125
+
+         <size>
+            20
+            20
+
+      </state>
+
+      <state>
+         Doesn't exist-final
+         <coordinates>
+            170
+            299
+
+         <size>
+            30
+            30
+
+      </state>
+
+      <event>
+         <<new>>
+      </event>
+
+      <event>
+         <<destroy>>
+      </event>
+
+      <event>
+         update
+      </event>
+
+      <transition>
+         <connectionpoint>
+            185
+            145
+            <connectedto>
+               Doesn't exist
+               0.5
+               1.0
+         <<new>>
+         <connectionpoint>
+            185
+            200
+            <connectedto>
+               Exists
+               0.5
+               0.0
+            <transitionaction>
+               initializer
+      </transition>
+
+      <transition>
+         <connectionpoint>
+            185
+            250
+            <connectedto>
+               Exists
+               0.5
+               1.0
+         <<destroy>>
+         <connectionpoint>
+            185
+            299
+            <connectedto>
+               Doesn't exist-final
+               0.5
+               0.0
+      </transition>
+
+      <transition>
+         <connectionpoint>
+            235
+            207
+            <connectedto>
+               Exists
+               1.0
+               0.14
+         update
+         <connectionpoint>
+            235
+            244
+            <connectedto>
+               Exists
+               1.0
+               0.88
+         <routingpoints>
+            313
+                207
+            313
+                244
+         </routingpoints>
+            <transitionaction>
+               update x
+      </transition>
+
+      <pimhelper>
+         .// comment 1
+         .// helper comment 2
+         .	// helper comment 3
+         .// comment 4
+      </pimhelper>
+
+   </class>
+
+
+
+</semanticmodel>
+

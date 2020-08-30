@@ -8,6 +8,5 @@ def test_states():
     """
     test states
     """
-    s = SimpleClass()
-    assert s.SimpleClass_states.EXISTS == s.SimpleClass_states.EXISTS
-    assert s.SimpleClass_states.DOESNTEXIST == s.SimpleClass_states.DOESNTEXIST
+    assert SimpleClass.SimpleClass_states.EXISTS == SimpleClass.SimpleClass_states.EXISTS
+    assert SimpleClass.SimpleClass_states.DOESNTEXIST == SimpleClass.SimpleClass_states.DOESNTEXIST

@@ -1,0 +1,33 @@
+{
+  // I want my default to be 4, but js/json to be 2
+  "python.venvPath": "/Users/kim/Documents/Apps/PythonApps",
+  "python.pythonPath": "/Users/kim/Documents/Apps/PythonApps/python377-experiment-mbe-simpleclass/bin/python",
+  "editor.tabSize": 4,
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.tabSize": 2
+  },
+  "python.linting.pycodestyleEnabled": false,
+  "python.linting.pycodestyleArgs": ["--max-line-length=120"],
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.pylintArgs": ["--enable=unused-import"],
+  "python.linting.enabled": true,
+  "python.linting.pylintPath": "/Users/kim/Documents/Apps/PythonApps/python377-experiment-mbe-simpleclass/bin/python",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "100"],
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "python.linting.flake8Enabled": true,
+  "editor.formatOnSave": true
+}

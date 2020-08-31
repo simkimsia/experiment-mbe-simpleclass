@@ -1,1 +1,1 @@
-from simple_class.app import SimpleClass  # NOQA
+from simple_class.models import SimpleClass  # NOQA

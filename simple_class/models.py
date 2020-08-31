@@ -1,5 +1,5 @@
 """
-doc string for app module
+doc string for models module
 """
 from enum import Enum
 from typing import ClassVar, List
@@ -21,7 +21,11 @@ class SimpleClass:
     SimpleClass_states = Enum("SimpleClass_states", "EXISTS DOESNTEXIST")
 
     # Attribute instance variables
-    # python doesn't do private so by convention use _
+    # Python doesn't treat private variables too strictly
+    # by convention it uses _ for private variables
+    # https://docs.python.org/3/tutorial/classes.html#private-variables
+    # and it treats client code as responsible users if they choose to ignore the convention
+    # https://docs.python-guide.org/writing/style/#we-are-all-responsible-users
     _x: int
     _state: SimpleClass_states
 
@@ -34,47 +38,47 @@ class SimpleClass:
         #     none
         # guarantees
         #    --> x has been set to zero and state == Exists
-        # import ipdb
-
-        # ipdb.set_trace()
         self._initializer()
         self._state = SimpleClass.SimpleClass_states.EXISTS
         SimpleClass.simpleClassSet.append(self)
 
-    #    // Attribute getters
+    # Attribute getters
+    # https://www.geeksforgeeks.org/getter-and-setter-in-python/
 
-    #       public int x() {
-    #       // requires
-    #       //   none
-    #       // guarantees
-    #       //   returns the x
-    #          return x;
-    #       }
+    # prefer the 2nd way of using property decorator if insist on getters and setters
+    # for completeness, include getters for the private variables
+    # for more pythonic approach,
+    # if a private variable has a getter that doesn't change anything
+    # then simply allow the variable
+    @property
+    def x(self) -> int:
+        # requires
+        #    none
+        # guarantees
+        #    returns the x
+        return self._x
 
-    #       public SimpleClass_states state() {
-    #       // requires
-    #       //   none
-    #       // guarantees
-    #       //   returns the state
-    #          return state;
-    #       }
+    @property
+    def state(self) -> SimpleClass_states:
+        # requires
+        #    none
+        # guarantees
+        #    returns the state
+        return self._state
 
-    #    // Derived attributes
+    # Derived attributes
+    #   none
 
-    #       // none
+    # Pushed events
 
-    #    // Pushed events
-
-    #       public void destroy() {
-    #       // requires
-    #       //    none
-    #       // guarantees
-    #       //   state was Exists --> state == Doesn't exist
-    #          if( state == SimpleClass_states.EXISTS ) {
-    #             state = SimpleClass_states.DOESNTEXIST;
-    #             simpleClassSet.remove( this );
-    #          }
-    #       }
+    def destroy(self) -> None:
+        # requires
+        #    none
+        # guarantees
+        #   state was Exists --> state == Doesn't exist
+        if self._state == SimpleClass.SimpleClass_states.EXISTS:
+            self._state = SimpleClass.SimpleClass_states.DOESNTEXIST
+            SimpleClass.simpleClassSet.remove(self)
 
     #       public void update( int newX ) {
     #       // requires
